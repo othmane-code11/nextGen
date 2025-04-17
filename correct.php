@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("127.0.0.1:3307", "root", "akashiyahya_99", "project");
+$conn = mysqli_connect("localhost", "root", "", "project");
 
 if (isset($_POST['sub'])) {
     if (!empty($_POST['name']) && !empty($_POST['email'])) {
@@ -24,6 +24,9 @@ mysqli_close($conn);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button id="toggle-theme" style="position: absolute; top: 20px; right: 20px;">
+        🌙 Dark/ ☀️ white Mode
+    </button>
     <div class="container">
         <h1>Gestion des Contacts</h1>
         <form id="form-container" method="post">
@@ -36,5 +39,7 @@ mysqli_close($conn);
 
         <a href="display.php">Afficher Contacts</a>
     </div>
+    <script src="script.js"></script>
+
 </body>
 </html>

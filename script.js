@@ -32,6 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+  const toggleBtn = document.getElementById('toggle-theme');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+
+
 // let contacts = [];
 // let modifierMode = false;
 // let indexMode = null;
