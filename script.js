@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Email format validation
+    
     function validateEmail(email) {
         let regexEmail = /^[a-zA-Z0-9]+([-_.][A-Za-z0-9])*@[a-zA-Z0-9]+\.[a-zA-Z0-9]{2,4}$/
         return regexEmail.test(email.toLowerCase());
