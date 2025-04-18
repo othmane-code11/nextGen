@@ -42,7 +42,7 @@ $result = mysqli_query($conn, $sql);
                             echo "<td>" . htmlspecialchars($row['id']) . "</td>";
                             echo "<td>" . htmlspecialchars($row['name']) . "</td>";
                             echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                            echo "<td><form method='POST'><button type='submit' name='supprimer' value={$row['id']}>Suprimer</button></form>";
+                            echo "<td><form method='POST'><button type='submit' id='supprimer' name='supprimer' value={$row['id']}>Suprimer</button></form>";
                             echo "</tr>";
                         }
                     } else {

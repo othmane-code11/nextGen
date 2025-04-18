@@ -9,15 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const name = nameInput.value.trim();
         const email = emailInput.value.trim();
 
-        // Simple front-end validation
         if (name === "" || email === "") {
-            e.preventDefault(); // Stop form submission
+            e.preventDefault();
             alert("Veuillez remplir tous les champs !");
         } else if (!validateEmail(email)) {
             e.preventDefault();
             alert("Veuillez saisir un email valide !");
         } else {
-            // Optional: Confirmation before submitting
             const confirmSubmit = confirm("Voulez-vous vraiment ajouter ce contact ?");
             if (!confirmSubmit) {
                 e.preventDefault();
@@ -31,12 +29,20 @@ document.addEventListener("DOMContentLoaded", () => {
         return regexEmail.test(email.toLowerCase());
     }
 });
+    const toggleBtn = document.getElementById('toggle-theme');
+    toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
 
-  const toggleBtn = document.getElementById('toggle-theme');
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-  });
 
+    document.getElementById('supprimer').addEventListener('click', (e) => {
+        // e.preventDefault();
+        if (confirm("Voulez-vous vraiment supprimer ce contact ?")){
+            alert('contact supprimer avec succes!');
+        }
+    });
+
+    
 
 // let contacts = [];
 // let modifierMode = false;
