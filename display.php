@@ -1,10 +1,35 @@
 <?php
 
-$conn = mysqli_connect("localhost", "root", "", "project");
+$conn = mysqli_connect("127.0.0.1:3307", "root", "Halamadrid@@2005", "gestion_contacts");
 
 
 $sql = "SELECT id, name, email FROM stud";
 $result = mysqli_query($conn, $sql);
+
+// Handle update
+if (isset($_POST['update'])) {
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    
+    $update = "UPDATE stud SET name='$name', email='$email' WHERE id=$id";
+    mysqli_query($conn, $update);
+    
+    // Refresh the page to show updated data
+    header("Location: ".$_SERVER['PHP_SELF']);
+    exit();
+}
+
+// Handle delete
+if (isset($_POST['supprimer'])) {
+    $id = $_POST['supprimer'];
+    $delete = "DELETE FROM stud WHERE id=$id";
+    mysqli_query($conn, $delete);
+    
+    // Refresh the page to show updated data
+    header("Location: ".$_SERVER['PHP_SELF']);
+    exit();
+}
 
 ?>
 
@@ -31,7 +56,7 @@ $result = mysqli_query($conn, $sql);
                         <th>ID</th>
                         <th>Nom</th>
                         <th>Email</th>
-                        <th>Supprimer</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,11 +67,30 @@ $result = mysqli_query($conn, $sql);
                             echo "<td>" . htmlspecialchars($row['id']) . "</td>";
                             echo "<td>" . htmlspecialchars($row['name']) . "</td>";
                             echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                            echo "<td><form method='POST'><button type='submit' id='supprimer' name='supprimer' value={$row['id']}>Suprimer</button></form>";
+                            echo "<td class='actions'>";
+                            
+                            // Update form (hidden by default, shown when "Modifier" is clicked)
+                            echo "<form method='POST' class='update-form' style='display:none;'>";
+                            echo "<input type='hidden' name='id' value='{$row['id']}'>";
+                            echo "<input type='text' name='name' value='".htmlspecialchars($row['name'])."'>";
+                            echo "<input type='email' name='email' value='".htmlspecialchars($row['email'])."'>";
+                            echo "<button type='submit' name='update' class='update-btn'>Sauvegarder</button>";
+                            echo "<button type='button' class='cancel-update'>Annuler</button>";
+                            echo "</form>";
+                            
+                            // Action buttons
+                            echo "<div class='action-buttons'>";
+                            echo "<button class='modifier-btn' data-id='{$row['id']}'>Modifier</button>";
+                            echo "<form method='POST' class='delete-form'>";
+                            echo "<button type='submit' name='supprimer' value='{$row['id']}' class='supprimer-btn'>Supprimer</button>";
+                            echo "</form>";
+                            echo "</div>";
+                            
+                            echo "</td>";
                             echo "</tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='3'>No records found</td></tr>";
+                        echo "<tr><td colspan='4'>No records found</td></tr>";
                     }
                     ?>
                 </tbody>
@@ -63,10 +107,5 @@ $result = mysqli_query($conn, $sql);
 </html>
 
 <?php
-if (isset($_POST['supprimer'])) {
-    $id = $_POST['supprimer'];
-    $delete = "DELETE FROM stud WHERE id=$id";
-    mysqli_query($conn, $delete);
-}
 mysqli_close($conn);
 ?>
