@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "project");
+$conn = mysqli_connect("127.0.0.1:3307", "root", "akashiyahya_99", "project");
 
 if (isset($_POST['sub'])) {
     if (!empty($_POST['name']) && !empty($_POST['email'])) {
@@ -38,6 +38,8 @@ mysqli_close($conn);
         <br>
 
         <a href="display.php">Afficher Contacts</a>
+        
+   
     </div>
     <script src="script.js"></script>
 

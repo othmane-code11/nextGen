@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("localhost", "root", "", "project");
+$conn = mysqli_connect("127.0.0.1:3307", "root", "akashiyahya_99", "project");
 
 
 $sql = "SELECT id, name, email FROM stud";
@@ -55,7 +55,7 @@ $result = mysqli_query($conn, $sql);
 
         <br>
 
-        <button><a href="correct.php">Go Back</a></button> 
+        <button><a href="correct.php">Go Back</a></button><a href="modify.php">modify</a> 
 
     </div>
     <script src="script.js"></script>
