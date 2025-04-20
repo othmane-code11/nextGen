@@ -11,7 +11,6 @@ if (isset($_POST['sub'])) {
         echo "<center><h1>You are not registered. Please fill in all fields.</h1></center>";
     }
 }
-
 mysqli_close($conn);
 ?>
 
