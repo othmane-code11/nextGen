@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("127.0.0.1:3307", "root", "Halamadrid@@2005", "gestion_contacts");
+$conn = mysqli_connect("localhost", "root", "", "");
 
 
 $sql = "SELECT id, name, email FROM stud";
@@ -19,7 +19,6 @@ if (isset($_POST['update'])) {
     header("Location: ".$_SERVER['PHP_SELF']);
     exit();
 }
-
 // Handle delete
 if (isset($_POST['supprimer'])) {
     $id = $_POST['supprimer'];

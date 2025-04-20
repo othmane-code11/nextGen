@@ -346,12 +346,10 @@ body.dark-mode tr:hover {
   background: linear-gradient(45deg, #38b000, #70e000) !important;
   padding: 10px 15px !important;
 }
-
 .cancel-update {
   background: linear-gradient(45deg, #ff6584, #f72585) !important;
   padding: 10px 15px !important;
 }
-
 .supprimer-btn {
   background: linear-gradient(45deg, #f72585, #b5179e) !important;
   padding: 10px 15px !important;

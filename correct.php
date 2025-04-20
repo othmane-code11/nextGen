@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("127.0.0.1:3307", "root", "Halamadrid@@2005", "gestion_contacts");
+$conn = mysqli_connect("localhost", "root", "", "");
 
 if (isset($_POST['sub'])) {
     if (!empty($_POST['name']) && !empty($_POST['email'])) {
@@ -11,7 +11,6 @@ if (isset($_POST['sub'])) {
         echo "<center><h1>You are not registered. Please fill in all fields.</h1></center>";
     }
 }
-
 mysqli_close($conn);
 ?>
 

@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
-
     // Handle update buttons
     document.querySelectorAll('.modifier-btn').forEach(btn => {
         btn.addEventListener('click', function() {
