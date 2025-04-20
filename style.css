@@ -335,6 +335,7 @@ body.dark-mode tr:hover {
 .update-form input {
   flex: 1;
   min-width: 120px;
+  
 }
 
 .modifier-btn {
