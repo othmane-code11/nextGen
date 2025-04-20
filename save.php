@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("127.0.0.1:3307", "root", "akashiyahya_99", "project");
+$conn = mysqli_connect("localhost", "root", "", "project");
 
 $name = "";
 $email = "";
@@ -40,12 +40,12 @@ if (isset($_POST['update']) && isset($_POST['edit_id'])) {
 
 mysqli_close($conn);
 ?>
-               
 
 
 
 
-                                            
+
+
 <!DOCTYPE html>
                                                           <!-- ModifiCATION OF user --->
 <html lang="en">

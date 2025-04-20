@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("127.0.0.1:3307", "root", "akashiyahya_99", "project");
+$conn = mysqli_connect("localhost", "root", "", "project");
 
 
 $sql = "SELECT id, name, email FROM stud";
@@ -42,7 +42,7 @@ $result = mysqli_query($conn, $sql);
                             echo "<td>" . htmlspecialchars($row['id']) . "</td>";
                             echo "<td>" . htmlspecialchars($row['name']) . "</td>";
                             echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                            echo "<td><form method='POST'><button type='submit' name='supprimer' value={$row['id']}>Suprimer</button></form>";
+                            echo "<td><form method='POST'><button type='submit' id='supprimer' name='supprimer' value={$row['id']}>Suprimer</button></form>";
                             echo "</tr>";
                         }
                     } else {
@@ -55,7 +55,7 @@ $result = mysqli_query($conn, $sql);
 
         <br>
 
-        <button><a href="correct.php">Go Back</a></button><a href="modify.php">modify</a> 
+        <button><a href="correct.php">Go Back</a></button><button id="modify"><a href="modify.php">modify</a> </button>
 
     </div>
     <script src="script.js"></script>

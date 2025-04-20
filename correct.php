@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("127.0.0.1:3307", "root", "akashiyahya_99", "project");
+$conn = mysqli_connect("localhost", "root", "", "project");
 
 if (isset($_POST['sub'])) {
     if (!empty($_POST['name']) && !empty($_POST['email'])) {

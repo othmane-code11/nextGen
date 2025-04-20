@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("127.0.0.1:3307", "root", "akashiyahya_99", "project");
+$conn = mysqli_connect("localhost", "root", "", "project");
 
 
 ?>
@@ -20,7 +20,7 @@ $conn = mysqli_connect("127.0.0.1:3307", "root", "akashiyahya_99", "project");
         <h1>Modification</h1>
         <form id="form-container" method="get" action="save.php">
             <center> <input type="number" name="id" id="nom"  placeholder="enter the id of input you want to modify"  style="width:100px;"> </center>
-            <center><button type="submit">Modify</button></center>
+            <center><button type="submit" id="modify">Modify</button></center>
         </form>
 
         <br>
