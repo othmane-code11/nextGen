@@ -1,7 +1,5 @@
-
 create  database project;
 USE project;
-
 
 CREATE TABLE stud (
     id INT PRIMARY KEY AUTO_INCREMENT,
